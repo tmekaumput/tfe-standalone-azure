@@ -37,11 +37,11 @@ module "tfe" {
   default_action_ip_rules = [chomp(data.http.icanhazip.body)]
 
   database_flexible_server = false
-  database_machine_type = "GP_Gen5_2"
-  database_version = "11"
+  database_machine_type = var.database_machine_type
+  database_version = var.database_version
 
   # vm_sku = "Standard_B1s"
-  vm_sku = "Standard_D4_v3"
+  vm_sku = var.vm_sku
   vm_node_count = 1
 }
 
